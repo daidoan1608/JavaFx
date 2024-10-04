@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="373.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.controller.UpdateDeleteUserController">
+   <children>
+      <ImageView fx:id="avatar" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#setupUploadButton" text="Đổi ảnh" />
+      <Label text="Tên đăng nhập" />
+      <Label fx:id="usernameLb" text="Label" />
+      <Label text="Họ và tên" />
+      <TextField fx:id="fullnameTf" />
+      <Label text="Email" />
+      <TextField fx:id="emailTf" />
+      <Label text="Password" />
+      <TextField fx:id="passwordTf" />
+      <Label text="Role" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <RadioButton fx:id="roleAdmin" mnemonicParsing="false" text="ADMIN">
+               <toggleGroup>
+                  <ToggleGroup fx:id="role" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="roleUser" mnemonicParsing="false" text="USER" toggleGroup="$role" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onClickUpdate" text="Cập nhập" />
+            <Button mnemonicParsing="false" onAction="#onClickDelete" text="Xóa" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

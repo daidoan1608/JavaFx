@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.controller.UserController">
+   <top>
+      <GridPane alignment="CENTER" prefHeight="59.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="3">
+               <children>
+                  <Label fx:id="loginUser" text="Xin chào" />
+                  <Hyperlink fx:id="logout" onAction="#handleLogout" text="Log Out" />
+               </children>
+            </HBox>
+            <Label text="HOME">
+               <font>
+                  <Font name="Times New Roman Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="18.0" prefWidth="900.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Copyright by DMD.FITA.VNUA" />
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="587.0" prefWidth="215.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageProduct" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Brand" />
+            <TextField fx:id="brandTf" />
+            <Label text="Model" />
+            <TextField fx:id="modelTf" />
+            <Label text="Price" />
+            <TextField fx:id="priceTf" />
+            <Label text="Os" />
+            <TextField fx:id="osTf" />
+            <Label layoutX="113.0" layoutY="401.0" text="Storage" />
+            <TextField fx:id="storageTf" layoutX="20.0" layoutY="428.0" />
+            <Label layoutX="113.0" layoutY="401.0" text="Ram" />
+            <TextField fx:id="ramTf" layoutX="20.0" layoutY="428.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <TableView fx:id="productListTV" onMouseClicked="#onClickRow" prefHeight="312.0" prefWidth="298.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="sttCol" prefWidth="94.0" sortType="DESCENDING" text="STT" />
+          <TableColumn fx:id="brandCol" prefWidth="245.0" text="Brand" />
+            <TableColumn fx:id="modelCol" prefWidth="75.0" text="Model" />
+            <TableColumn fx:id="priceCol" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="osCol" prefWidth="75.0" text="Os" />
+            <TableColumn fx:id="storageCol" prefWidth="75.0" text="Storage" />
+            <TableColumn fx:id="ramCol" prefWidth="75.0" text="Ram" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+</BorderPane>
